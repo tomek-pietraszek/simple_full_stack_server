@@ -11,7 +11,7 @@ export const updateCount = async (req, res, next) => {
           if(!count){
             await Count.create({count: null})
           }
-          res.cookie("count", req.body.count, {httpOnly: true, secure:true})
+          // res.cookie("count", req.body.count, {httpOnly: true, secure:true})
 
           res.status(200).json({
             success:true,
