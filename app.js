@@ -16,7 +16,15 @@ const app = express();
 const { PORT = 5000, DB_URI } = process.env;
 
 app
-  .use(cors({origin: "http://localhost:5173", credentials: true}))
+  .use(
+    cors({
+      origin: [
+        "http://localhost:5173",
+        "https://simple-full-stack-project.onrender.com "
+      ],
+      credentials: true,
+    })
+  )
   .use(express.json())
   .use(cookieParser())
   .use("/counts", countRouter)
